@@ -1,0 +1,9 @@
+git:
+- name: kuberay
+  automerge: 'yes'
+  src:
+    url: https://github.com/ray-project/kuberay.git
+    branch: master
+  dest:
+    url: https://github.com/z103cb/kuberay.git
+    branch: master
