@@ -10,8 +10,8 @@ on:
             - all
             - kuberay
 
-  schedule:
-    - cron: '0 0 * * *'
+  #schedule:
+  #  - cron: '0 0 * * *'
 
 permissions:
   packages: write
