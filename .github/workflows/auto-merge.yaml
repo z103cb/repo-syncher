@@ -56,11 +56,11 @@ jobs:
         mapping: ${{ fromJSON(needs.setup.outputs.matrix) }}
     steps:
       - name: GitHub Sync to Upstream Repository
-        uses: dchourasia/sync-upstream-repo@1.01
+        uses: z103cb/sync-upstream-repo@v2.0.0
         with:
-          upstream_repo: "${{ matrix.mapping.src.url }}"
+          upstream_repo_url: "${{ matrix.mapping.src.url }}"
           upstream_branch: "${{ matrix.mapping.src.branch }}"
-          downstream_repo: "${{ matrix.mapping.dest.url }}"
+          downstream_repo_url: "${{ matrix.mapping.dest.url }}"
           downstream_branch: "${{ matrix.mapping.dest.branch }}"
           token: ${{ secrets.SYNCHER_APP_TOKEN }}
-          spawn_logs: ${{ env.SPAWN_LOGS }}
+          merge_strategy: "rebase"
