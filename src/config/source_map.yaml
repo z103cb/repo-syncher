@@ -1,6 +1,7 @@
 git:
 - name: kuberay
   automerge: 'yes'
+  mode: 'branch-to-branch'
   src:
     url: https://github.com/ray-project/kuberay.git
     branch: master
@@ -9,6 +10,7 @@ git:
     branch: master
 - name: openvino_model_server_main
   automerge: 'yes'
+  mode: 'branch-to-branch'
   src:
     url: https://github.com/openvinotoolkit/model_server.git 
     branch: main 
@@ -17,9 +19,10 @@ git:
     branch: main
 - name: openvino_model_server_release
   automerge: 'yes'
+  mode: 'release-following'
   src:
     url: https://github.com/openvinotoolkit/model_server.git 
-    branch: releases/2023/3 
+    branch: releases/20*
   dest:
     url: https://github.com/z103cb/openvino_model_server.git 
     branch: release

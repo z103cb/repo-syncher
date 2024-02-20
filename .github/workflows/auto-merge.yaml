@@ -56,8 +56,9 @@ jobs:
         mapping: ${{ fromJSON(needs.setup.outputs.matrix) }}
     steps:
       - name: GitHub Sync to Upstream Repository
-        uses: z103cb/sync-upstream-repo@2eff98db298836c1532a3a6b600914ae71f09d2d
+        uses: z103cb/sync-upstream-repo@5f1f78551247a01b444e47d81a1dd7aff4b4dac0
         with:
+          mode: "${{matrix.mapping.mode }}"
           upstream_repo_url: "${{ matrix.mapping.src.url }}"
           upstream_branch: "${{ matrix.mapping.src.branch }}"
           downstream_repo_url: "${{ matrix.mapping.dest.url }}"
